@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="uusiDrop.css">
+</head>
+
+<body>
+    <div id="boxContainer">
+        <div id="1" class="box" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="3" class="box" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="5" class="box" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="7" class="box" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    </div>
+
+    <div id=fillerGrid>
+        <div class="column" id="A">
+            <div id="2" class="filler" ondragstart="drag(event)">
+                <p>1</p>
+            </div>
+        </div>
+        <div class="column" id="B">
+            <div id="4" class="filler" ondragstart="drag(event)">
+                <p>2</p>
+            </div>
+        </div>
+        <div class="column" id="C">
+            <div id="6" class="filler" ondragstart="drag(event)">
+                <p>3</p>
+            </div>
+        </div>
+        <div class="column" id="D">
+            <div id="8" class="filler" ondragstart="drag(event)">
+                <p>4</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="uusiDrop.js"></script>
+
+</html>

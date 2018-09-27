@@ -1,0 +1,27 @@
+#boxContainer {
+    display: flex;
+}
+#fillerGrid {
+    display: flex;
+}
+.box {
+    width: 5em;
+    height: 5em;
+    margin: 1em;
+    border: 1px solid black;
+}
+.column {
+    flex-wrap: wrap;
+    width: 5em;
+    height: 5em;
+}
+.filler {
+    width: 2.5em;
+    background: yellowgreen;
+    margin: 1.25em;
+    height: 2.5em;
+    cursor: pointer;
+}
+p {
+    text-align: center;
+}
