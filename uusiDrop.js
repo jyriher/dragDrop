@@ -2,6 +2,7 @@ const boxes = document.querySelectorAll('.box');
 const fillers = document.querySelectorAll('.filler');
 const taulukko = [];
 const varasto = [];
+const undraggable = [];
 
 const allowDrop = (ev) => {
     ev.preventDefault();
@@ -58,6 +59,8 @@ const dragStart = (ev) => {
 
 const dragEnd = (ev) => {
 
+    console.log(ev);
+
     console.log(varasto);
     console.log('LOOK: ' + (ev.target.id - 1));
 
@@ -68,14 +71,21 @@ const dragEnd = (ev) => {
         ev.currentTarget.setAttribute('draggable', true);
         taulukko.length = 0;
         //varasto.length = 0;
-    } else if (varasto[0] == ev.target.id - 1){
+    } else if (varasto[0] == ev.target.id - 1) {
         // ev.currentTarget.setAttribute('draggable', false);
         ev.currentTarget.setAttribute('draggable', false);
+        ev.target.children['0'].setAttribute('draggable', false);
+        console.log(ev.target.children['0'])
         console.log('SAMAT!');
+        undraggable.push(ev.target.id);
+    } else if (undraggable.includes(ev.target.id)) {
+        ev.currentTarget.setAttribute('draggable', false);
+        ev.target.children['0'].setAttribute('draggable', false);
     }
     console.log('end');
     console.log(taulukko);
     varasto.length = 0;
+    console.log(undraggable);
 }
 
 for (filler of fillers) {
