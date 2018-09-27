@@ -7,7 +7,7 @@ const allowDrop = (ev) => {
 }
 
 const drag = (ev) => {
-   // console.log(ev);
+    // console.log(ev);
     ev.dataTransfer.setData('text', ev.currentTarget.id);
     ev.currentTarget.style.background = 'blue';
     taulukko.push(ev.target.parentNode);
@@ -40,7 +40,7 @@ const drop = (ev) => {
         // ev.dataTransfer.dropEffect = 'none';
         taulukko[0].appendChild(ev.target.childNodes['0']);
         alert('No eihän se ihan näin mee');
-       // ev.currentTarget.setAttribute('draggable', true);
+        // ev.currentTarget.setAttribute('draggable', true);
         taulukko.length = 0;
         //  console.log(back);
         // append back to the original parent            
@@ -61,7 +61,8 @@ const dragEnd = (ev) => {
         ev.currentTarget.setAttribute('draggable', true);
         taulukko.length = 0;
     } else {
-        ev.currentTarget.setAttribute('draggable', false);
+        // ev.currentTarget.setAttribute('draggable', false);
+        console.log('tänne jotain');
     }
     console.log('end');
     console.log(taulukko);
